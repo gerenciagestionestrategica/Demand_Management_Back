@@ -1,0 +1,11 @@
+.git
+.vscode
+node_modules
+dist
+npm-debug.log
+.env
+
+
+firebase.json
+.env
+./node-modules/
