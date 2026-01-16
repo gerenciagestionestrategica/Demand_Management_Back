@@ -32,6 +32,10 @@ const poModel = {
       }
       throw err;
     }
+
+    if(decoded.role != 'Radicador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
     
 
     const snapshot = await db
@@ -70,6 +74,10 @@ const poModel = {
       }
       throw err;
     }
+
+    if(decoded.role != 'Radicador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
 
     
     if (!req.file) {
@@ -217,6 +225,10 @@ const poModel = {
         }
         throw err;
       }
+
+      if(decoded.role != 'Radicador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
 
       const email = decoded.email;
       const formData = req.body;
@@ -388,6 +400,10 @@ const poModel = {
         }
         throw err;
       }
+
+      if(decoded.role != 'Radicador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
 
       const { id_radicado } = req.params;
 

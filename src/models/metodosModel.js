@@ -27,6 +27,10 @@ const MetodosModel = {
         throw err;
       }
 
+      if(decoded.role != 'Metodos'){
+          throw new Error("USER_NOT_ALLOWED");
+      }
+
       const { id_draft } = req.body;
 
       if (!id_draft) {
@@ -115,6 +119,10 @@ const MetodosModel = {
             throw new Error("INVALID_TOKEN");
           }
           throw err;
+        }
+
+        if(decoded.role != 'Metodos'){
+          throw new Error("USER_NOT_ALLOWED");
         }
 
         

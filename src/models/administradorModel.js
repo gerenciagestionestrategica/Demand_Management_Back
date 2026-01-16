@@ -28,6 +28,10 @@ const administradorModel = {
           throw err;
         }
 
+        if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
+
         
         const snapshot = await db.collection("users").where('role','in',['Radicador','Metodos','Gerente', 'Vicepresidente']).get();
 
@@ -64,6 +68,10 @@ const administradorModel = {
         }
         throw err;
       }
+
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
       
       const id_radicado = infoUserUpdate.id;
 
@@ -104,6 +112,10 @@ const administradorModel = {
         }
         throw err;
       }
+
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
 
       const userData = req.body;
 
@@ -161,6 +173,10 @@ const administradorModel = {
         throw err;
       }
 
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
+
       const { id_user } = req.params;
 
       if (!id_user) {
@@ -196,6 +212,10 @@ const administradorModel = {
         }
         throw err;
       }
+
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
 
       const tribusRef = await db.collection('tribu').get();
       const tribus = tribusRef.docs.map(doc => doc.data().name);
@@ -248,6 +268,10 @@ const administradorModel = {
         throw err;
       }
 
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
+
       const tribuData = req.body;
 
       const tribuRef = await db.collection('tribu');
@@ -279,6 +303,10 @@ const administradorModel = {
         }
         throw err;
       }
+
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
 
       const { name } = req.body;
 
@@ -328,6 +356,10 @@ const administradorModel = {
         throw err;
       }
 
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
+
       const squadData = req.body;
 
       const squadRef = await db.collection('squad');
@@ -360,6 +392,10 @@ const administradorModel = {
         }
         throw err;
       }
+
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
 
       const { name } = req.body;
 
@@ -411,6 +447,10 @@ const administradorModel = {
         throw err;
       }
 
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
+
       const sponsorData = req.body;
 
       const sponsorRef = await db.collection('vp_sponsor');
@@ -445,6 +485,10 @@ const administradorModel = {
         }
         throw err;
       }
+
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
 
       const { name } = req.body;
 
@@ -499,6 +543,10 @@ const administradorModel = {
         throw err;
       }
 
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
+
     
       const salarioRef = await db.collection('salario').get();
 
@@ -546,6 +594,9 @@ const administradorModel = {
         throw err;
       }
 
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
     
       const salarioRef = await db.collection('salario').get();
 
@@ -593,6 +644,10 @@ const administradorModel = {
         throw err;
       }
 
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
+
       const viceRef = await db.collection('vicepresidencia_respaldo').get();
 
       if (viceRef.empty) {
@@ -636,6 +691,10 @@ const administradorModel = {
         throw err;
       }
 
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
+
       const vicepresidentAproverData = req.body;
 
       const vicepresidentAproverRef = await db.collection('vicepresidencia_aprobadora');
@@ -668,6 +727,10 @@ const administradorModel = {
         }
         throw err;
       }
+
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
 
       const { name } = req.body;
 
@@ -718,6 +781,10 @@ const administradorModel = {
         }
         throw err;
       }
+
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
 
       const { id_draft, statusUpdate } = req.body;
     
@@ -818,6 +885,10 @@ const administradorModel = {
         }
         throw err;
       }
+
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
 
       const { id_draft, correo, statusUpdate } = req.body;
      
@@ -1070,6 +1141,10 @@ const administradorModel = {
         }
         throw err;
       }
+
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
 
       const { id_draft, correo } = req.body;
      
@@ -1328,6 +1403,10 @@ const administradorModel = {
         throw err;
       }
 
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
+
       const { id_draft, correo, statusUpdate } = req.body;
      
 
@@ -1474,6 +1553,10 @@ const administradorModel = {
         }
         throw err;
       }
+
+      if(decoded.role != 'Administrador'){
+            throw new Error("USER_NOT_ALLOWED");
+        }
 
       const { id_draft, correo } = req.body;
      

@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 
 app.use(cors({
-  origin: process.env.PORT_ACEPT, // Angular tener "http://localhost" en prod o process.env.PORT_ACEPT en dev
+  origin: process.env.PORT_ACEPT, // Angular nessecary use "http://localhost" in prod o process.env.PORT_ACEPT in dev
   credentials: true,               
   Metodos: "GET,POST,PUT,DELETE",
   allowedHeaders: ["Content-Type", "Authorization"]

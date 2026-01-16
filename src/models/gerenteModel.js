@@ -28,6 +28,10 @@ const gerenteModel = {
           throw err;
         }
 
+        if(decoded.role != 'Gerente'){
+          throw new Error("USER_NOT_ALLOWED");
+        }
+
         
         const { documentId, inf } = req.body;
         if (!documentId || !inf) {
@@ -149,6 +153,10 @@ const gerenteModel = {
         }
         throw err;
       }
+
+      if(decoded.role != 'Gerente'){
+          throw new Error("USER_NOT_ALLOWED");
+        }
 
       const { id_draft } = req.body;
 

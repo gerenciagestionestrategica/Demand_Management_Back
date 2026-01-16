@@ -60,15 +60,15 @@ const login = {
     Object.keys(req.cookies).forEach(cookieName => {
       res.clearCookie(cookieName, {
           httpOnly: true,
-          secure: false,
-          sameSite: "lax",
+          secure: true,
+          sameSite: "none",
           path: "/"
         });
       });
 
 
       
-    return res.redirect("https://accounts.google.com/logout");
+    return res.json({ success: true, message: "Sesión cerrada" });
     } catch(err) {
       console.error('Error cerrando sesión:', err);
       return res.status(500).json({ success: false, message: 'Error al cerrar sesión' });

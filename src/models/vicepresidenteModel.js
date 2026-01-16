@@ -28,6 +28,11 @@ const vicepresidenteModel = {
         throw err;
       }
 
+
+      if(decoded.role != 'Vicepresidente'){
+          throw new Error("USER_NOT_ALLOWED");
+      }
+
       const { id_draft } = req.body;
 
       if (!id_draft) {
@@ -176,6 +181,9 @@ const vicepresidenteModel = {
         throw err;
       }
 
+      if(decoded.role != 'Vicepresidente'){
+          throw new Error("USER_NOT_ALLOWED");
+      }
       
       const { documentId, inf } = req.body;
       if (!documentId || !inf) {
