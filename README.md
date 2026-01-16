@@ -186,6 +186,18 @@ API_KEY_N8N_IA=https://tu-n8n-webhook-ia-url
 3. Configura las URLs de redirección autorizadas (Las URL que pueden acceder)
 4. Copia el Client ID al archivo `.env` como `GOOGLE_CLIENT_ID`
 
+### tener en cuenta con JWT
+
+```bash
+res.cookie("session", sessionToken, {
+        httpOnly: true,
+        secure: true, // true in production, false in development
+        sameSite: "none", // use "none" for cross-domain, "lax" for same-domain
+        path: "/",
+        maxAge: 86400000, // 24h
+});
+```
+
 
 ## 📁 Estructura del Proyecto
 

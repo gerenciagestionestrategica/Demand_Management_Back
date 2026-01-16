@@ -138,8 +138,8 @@ const login = {
       // Guardar cookie
       res.cookie("session", sessionToken, {
         httpOnly: true,
-        secure: true, //dev true
-        sameSite: "none", //dev "none"other lax
+        secure: true, // true in production, false in development
+        sameSite: "none", // use "none" for cross-domain, "lax" for same-domain
         path: "/",
         maxAge: 86400000, // 24h
       });
